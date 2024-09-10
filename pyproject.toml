@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "spaider-agent-template"
+version = "0.1.0"
+description = ""
+authors = ["Ketan Kunkalikar <ketankunkalikar33@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langchain = "^0.2.16"
+langchain-huggingface = "^0.0.3"
+langchain-community = "^0.2.16"
+typing-extensions = "^4.12.2"
+langgraph = "^0.2.16"
+langchain-groq = "^0.1.9"
+python-dotenv = "^1.0.1"
+openai = "^1.44.0"
+langchain-openai = "^0.1.23"
+langgraph-checkpoint-sqlite = "^1.0.3"
+black = "^24.8.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
