@@ -34,29 +34,41 @@ builder.add_conditional_edges("agent", should_continue, {"continue": "tools", "e
 '''SYNTAX FOR REGULAR EDGES, COPY THIS.'''
 builder.add_edge("tools", "fs_manager")
 
+'''COMPILE GRAPH'''
 graph = builder.compile()
     
-    
-# Create a thread configuration
-thread = {"configurable": {"thread_id": "1"}}
-task = input("User >>")
-for s in graph.stream(
-    {
-        'task': task,
-        'current_directory_path': (subprocess.run("pwd", shell=True, check=True, text=True, capture_output=True)).stdout
-    },
-    thread
-):
-    for key, value in s.items():
-        print(f"{key}:")
-        if isinstance(value, dict):
-            for sub_key, sub_value in value.items():
-                print(f"  {sub_key}:")
-                print(f"    {sub_value}")
-                print()
+# Helper function for formatting the stream nicely
+def print_stream(stream):
+    for s in stream:
+        message = s["messages"][-1]
+        if isinstance(message, tuple):
+            print(message)
         else:
-            print(value)
-        print()
+            message.pretty_print()
+
+inputs = {"messages": [("user", "create a file called finally.txt in this folder: C:\\Users\\ketan\\Desktop\\SPAIDER-SPACE\\test_folder")]}
+print_stream(graph.stream(inputs, stream_mode="values"))
+    
+# # Create a thread configuration
+# thread = {"configurable": {"thread_id": "1"}}
+# task = input("User >>")
+# for s in graph.stream(
+#     {
+#         'task': task,
+#         'current_directory_path': (subprocess.run("pwd", shell=True, check=True, text=True, capture_output=True)).stdout
+#     },
+#     thread
+# ):
+#     for key, value in s.items():
+#         print(f"{key}:")
+#         if isinstance(value, dict):
+#             for sub_key, sub_value in value.items():
+#                 print(f"  {sub_key}:")
+#                 print(f"    {sub_value}")
+#                 print()
+#         else:
+#             print(value)
+#         print()
         
    
     
