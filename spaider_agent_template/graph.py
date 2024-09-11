@@ -29,7 +29,7 @@ builder.set_entry_point("fs_manager")
 
 '''ADD EDGES/CONDITIONAL EDGES FOR THE GRAPH'''
 '''SYNTAX FOR CONDITIONAL EDGES, COPY THIS.'''
-builder.add_conditional_edges("agent", should_continue, {"continue": "tools", "end": END})
+builder.add_conditional_edges("fs_manager", should_continue, {"continue": "tools", "end": END})
 
 '''SYNTAX FOR REGULAR EDGES, COPY THIS.'''
 builder.add_edge("tools", "fs_manager")
@@ -46,7 +46,7 @@ def print_stream(stream):
         else:
             message.pretty_print()
 
-inputs = {"messages": [("user", "create a file called finally.txt in this folder: C:\\Users\\ketan\\Desktop\\SPAIDER-SPACE\\test_folder")]}
+inputs = {"messages": [("user", "in the same file of the same folder, add the text 'India is my country.'")]}
 print_stream(graph.stream(inputs, stream_mode="values"))
     
 # # Create a thread configuration
