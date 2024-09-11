@@ -8,12 +8,15 @@ from spaider_agent_template.prompts import *
 from spaider_agent_template.schemas import AgentState
 from langchain.agents import initialize_agent, AgentType
 
-'''IMPORT ALL TOOLS HERE'''
+'''IMPORT ALL TOOLS HERE AND CREATE LIST OF TOOLS TO BE PASSED TO THE AGENT.'''
 from spaider_agent_template.tools.shell import run_batch_script_tool
 from spaider_agent_template.tools.file_tree import get_file_tree_tool
 
-'''llm to use'''
+tools = [get_file_tree_tool, run_batch_script_tool]
+
+'''LLM TO USE'''
 llm = build_oai_llm()
+llm_with_tools = llm.bind_tools(tools)
 
 '''WRITE FUNCTION DEFINING THE LOGIC OF EACH NODE. REFER BELOW SAMPLES FOR SYNTAX.'''
 def fs_manager_node(state: AgentState):
