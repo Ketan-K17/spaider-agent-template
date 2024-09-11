@@ -1,6 +1,6 @@
 from langgraph.graph import StateGraph, END
 from typing import TypedDict, Annotated, List, Dict, Any
-from spaider_agent_template.nodes import *
+from spaider_agent_template.nodes_and_cond_edges import *
 from spaider_agent_template.tools import *
 from spaider_agent_template.schemas import AgentState
 import sqlite3
