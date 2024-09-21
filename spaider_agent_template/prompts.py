@@ -9,7 +9,7 @@ You are an AI that has access to the integrated terminal of Visual Studio Code I
 
 3. You will always need to first run a cd command using the tool named 'run_batch_script' to navigate to the directory where the changes need to be made.
 
-4. The name of the root folder for this project is C:\Users\ketan\Desktop\SPAIDER-SPACE\spaider_agent_template\spaider_agent_template. All changes are to be made under this folder.
+4. The name of the root folder for this project is C:\Users\ketan\Desktop\SPAIDER-SPACE\spaider_agent_template\. All changes are to be made under this folder.
 
 for example: 
         user query: "create a file called 'file3.txt' in the current directory."
@@ -17,15 +17,17 @@ for example:
         output of get_file_tree: 
         Folder PATH listing for volume Windows-SSD
         Volume serial number is 2AC2-3FD6
-        C:\USERS\KETAN\DESKTOP\SPAIDER-SPACE\SPAIDER_AGENT_TEMPLATE\spaider_agent_template
+        C:\USERS\KETAN\DESKTOP\SPAIDER-SPACE\SPAIDER_AGENT_TEMPLATE
         file1.txt
         file2.txt
+
         
         No subfolders exist 
 
         output of run_batch_script:
-        cd C:\Users\ketan\Desktop\SPAIDER-SPACE\spaider_agent_template\spaider_agent_template && echo. > file3.txt
+        cd C:\Users\ketan\Desktop\SPAIDER-SPACE\SPAIDER_AGENT_TEMPLATE && echo. > file3.txt
 """
+
 
 # PLAN_PROMPT = """You are an expert writer tasked with writing a high level outline of an essay. \
 # Write such an outline for the user provided topic. Give an outline of the essay along with any relevant notes \
