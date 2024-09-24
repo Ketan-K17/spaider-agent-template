@@ -1,5 +1,6 @@
 from langchain_core.runnables.config import RunnableConfig
 
+
 # LOCAL IMPORTS.
 from spaider_agent_temp.graph import create_graph, compile_graph, print_stream
 from spaider_agent_temp.prompts.prompts import FS_MANAGER_PROMPT
@@ -14,7 +15,10 @@ if __name__ == "__main__":
     verbose = True
     builder = create_graph()
     graph = compile_graph(builder)
-        
+
+    # print the mermaid diagram of the graph.
+    # print(graph.get_graph().draw_mermaid())
+    
     # infinite loop to take user input and print the output stream.
     while True:
         user_input = input("############# User: ")
