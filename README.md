@@ -1,9 +1,11 @@
 # Spaider Agent Template
 
+![alt text](image.png)
+
 ## Overview
 
 It's the agent template we'll be using/modifying for any agent-workflows we create.
-
+`
 ## Project Structure
 
 The project is organized into several key directories and files:
