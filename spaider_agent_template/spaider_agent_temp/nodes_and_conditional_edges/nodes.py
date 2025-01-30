@@ -18,7 +18,7 @@ load_dotenv()
 tools = [run_script, get_file_tree]
 
 '''LLM TO USE'''
-MODEL = "llama-3.1-70b-versatile"
+MODEL = "llama-3.3-70b-versatile"
 # MODEL = "llama-3.1-8b-instant"
 # MODEL = "gemma2-9b-it"
 # MODEL = "llama3-groq-70b-8192-tool-use-preview"
